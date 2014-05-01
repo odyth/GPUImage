@@ -802,11 +802,11 @@ NSString *const kGPUImageColorSwizzlingFragmentShaderString = SHADER_STRING
             
             AudioChannelLayout acl;
             bzero( &acl, sizeof(acl));
-            acl.mChannelLayoutTag = kAudioChannelLayoutTag_Mono;
+            acl.mChannelLayoutTag = self.shouldUseStereo ? kAudioChannelLayoutTag_Stereo : kAudioChannelLayoutTag_Mono;
             
             audioOutputSettings = [NSDictionary dictionaryWithObjectsAndKeys:
                                          [ NSNumber numberWithInt: kAudioFormatMPEG4AAC], AVFormatIDKey,
-                                         [ NSNumber numberWithInt: 1 ], AVNumberOfChannelsKey,
+                                         [ NSNumber numberWithInt: (self.shouldUseStereo ? 2 : 1) ], AVNumberOfChannelsKey,
                                          [ NSNumber numberWithFloat: preferredHardwareSampleRate ], AVSampleRateKey,
                                          [ NSData dataWithBytes: &acl length: sizeof( acl ) ], AVChannelLayoutKey,
                                          //[ NSNumber numberWithInt:AVAudioQualityLow], AVEncoderAudioQualityKey,

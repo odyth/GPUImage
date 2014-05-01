@@ -31,6 +31,7 @@ extern NSString *const kGPUImageColorSwizzlingFragmentShaderString;
     GPUImageRotationMode inputRotation;
 }
 
+@property (nonatomic) BOOL shouldUseStereo;
 @property(readwrite, nonatomic) BOOL hasAudioTrack;
 @property(readwrite, nonatomic) BOOL shouldPassthroughAudio;
 @property(readwrite, nonatomic) BOOL shouldInvalidateAudioSampleWhenDone;
