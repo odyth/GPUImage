@@ -35,6 +35,10 @@
  */
 @property(readonly, nonatomic) float progress;
 
+/** This determines whether audio should be played. Cann't be set to work with video writing. Defaults to NO.
+ */
+@property(readwrite, nonatomic) BOOL playSound;
+
 /** This is used to send the delete Movie did complete playing alert
  */
 @property (readwrite, nonatomic, assign) id <GPUImageMovieDelegate>delegate;

@@ -2,6 +2,7 @@
 #import "GPUImageMovieWriter.h"
 #import "GPUImageFilter.h"
 #import "GPUImageVideoCamera.h"
+#import "GPUImageAudioPlayer.h"
 
 @interface GPUImageMovie () <AVPlayerItemOutputPullDelegate>
 {
@@ -25,7 +26,11 @@
     BOOL isFullYUVRange;
 
     int imageBufferWidth, imageBufferHeight;
+    
 }
+
+@property (nonatomic, strong) GPUImageAudioPlayer *audioPlayer;
+@property (nonatomic) dispatch_queue_t audio_queue;
 
 - (void)processAsset;
 
@@ -201,18 +206,43 @@
     [assetReader addOutput:readerVideoTrackOutput];
 
     NSArray *audioTracks = [self.asset tracksWithMediaType:AVMediaTypeAudio];
-    BOOL shouldRecordAudioTrack = (([audioTracks count] > 0) && (self.audioEncodingTarget != nil) );
+    BOOL hasAudioTracks = [audioTracks count];
+    BOOL shouldPlayAudio = hasAudioTracks > 0 && self.playSound;
+    BOOL shouldRecordAudioTrack = hasAudioTracks && self.audioEncodingTarget != nil;
     AVAssetReaderTrackOutput *readerAudioTrackOutput = nil;
 
-    if (shouldRecordAudioTrack)
+    if (shouldRecordAudioTrack || shouldPlayAudio)
     {
-        [self.audioEncodingTarget setShouldInvalidateAudioSampleWhenDone:YES];
+        if(shouldRecordAudioTrack)
+        {
+            [self.audioEncodingTarget setShouldInvalidateAudioSampleWhenDone:YES];
+        }
         
         // This might need to be extended to handle movies with more than one audio track
         AVAssetTrack* audioTrack = [audioTracks objectAtIndex:0];
-        readerAudioTrackOutput = [AVAssetReaderTrackOutput assetReaderTrackOutputWithTrack:audioTrack outputSettings:nil];
+        
+        NSDictionary *audioReadSettings = @{ AVFormatIDKey : @(kAudioFormatLinearPCM),
+                                             AVSampleRateKey : @(44100.0),
+                                             AVLinearPCMBitDepthKey : @(16),
+                                             AVLinearPCMIsNonInterleaved : @(NO),
+                                             AVLinearPCMIsFloatKey : @(NO),
+                                             AVLinearPCMIsBigEndianKey : @(NO) };
+        
+        readerAudioTrackOutput = [AVAssetReaderTrackOutput assetReaderTrackOutputWithTrack:audioTrack outputSettings:audioReadSettings];
         readerAudioTrackOutput.alwaysCopiesSampleData = NO;
         [assetReader addOutput:readerAudioTrackOutput];
+        
+        if (shouldPlayAudio){
+            if (self.audio_queue == nil){
+                self.audio_queue = dispatch_queue_create("GPUAudioQueue", nil);
+            }
+            
+            if (self.audioPlayer == nil){
+                self.audioPlayer = [[GPUImageAudioPlayer alloc] init];
+                [self.audioPlayer initAudio];
+                [self.audioPlayer startPlaying];
+            }
+        }
     }
 
     return assetReader;
@@ -238,7 +268,7 @@
 
     if ([reader startReading] == NO) 
     {
-            NSLog(@"Error reading from file at URL: %@", self.url);
+        NSLog(@"Error reading from file at URL: %@", self.url);
         return;
     }
 
@@ -394,6 +424,14 @@
         CMSampleBufferRef audioSampleBufferRef = [readerAudioTrackOutput copyNextSampleBuffer];
         if (audioSampleBufferRef)
         {
+            if (self.playSound){
+                CFRetain(audioSampleBufferRef);
+                dispatch_async(self.audio_queue, ^{
+                    [self.audioPlayer copyBuffer:audioSampleBufferRef];
+                    
+                    CFRelease(audioSampleBufferRef);
+                });
+            }
             //NSLog(@"read an audio frame: %@", CFBridgingRelease(CMTimeCopyDescription(kCFAllocatorDefault, CMSampleBufferGetOutputPresentationTimeStamp(audioSampleBufferRef))));
             [self.audioEncodingTarget processAudioBuffer:audioSampleBufferRef];
             CFRelease(audioSampleBufferRef);
@@ -671,6 +709,11 @@
     {
         [synchronizedMovieWriter setVideoInputReadyCallback:^{return NO;}];
         [synchronizedMovieWriter setAudioInputReadyCallback:^{return NO;}];
+    }
+    
+    if (self.audioPlayer != nil)
+    {
+        [self.audioPlayer stopPlaying];
     }
     
     if (self.playerItem && (displayLink != nil))
