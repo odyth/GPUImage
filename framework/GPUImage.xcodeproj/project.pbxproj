@@ -357,9 +357,26 @@
 		D443237A17C81C0C00204484 /* GPUImageMovieComposition.h in Headers */ = {isa = PBXBuildFile; fileRef = D443237817C81C0C00204484 /* GPUImageMovieComposition.h */; };
 		D443237B17C81C0C00204484 /* GPUImageMovieComposition.m in Sources */ = {isa = PBXBuildFile; fileRef = D443237917C81C0C00204484 /* GPUImageMovieComposition.m */; };
 		F73D58DF19122D890030F3F3 /* GPUImageAudioPlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = F73D58DD19122D890030F3F3 /* GPUImageAudioPlayer.h */; };
-		F73D58E019122D890030F3F3 /* GPUImageAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = F73D58DE19122D890030F3F3 /* GPUImageAudioPlayer.m */; };
 		F73D58E419122ED90030F3F3 /* TPCircularBuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = F73D58E219122ED90030F3F3 /* TPCircularBuffer.h */; };
 		F73D58E519122ED90030F3F3 /* TPCircularBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = F73D58E319122ED90030F3F3 /* TPCircularBuffer.m */; };
+		F7D7581E1915EC75004CA402 /* Dirac.h in Headers */ = {isa = PBXBuildFile; fileRef = F7D758081915EC75004CA402 /* Dirac.h */; };
+		F7D7581F1915EC75004CA402 /* DiracAudioPlayerBase.h in Headers */ = {isa = PBXBuildFile; fileRef = F7D7580B1915EC75004CA402 /* DiracAudioPlayerBase.h */; };
+		F7D758201915EC75004CA402 /* DiracAudioPlayerBase.mm in Sources */ = {isa = PBXBuildFile; fileRef = F7D7580C1915EC75004CA402 /* DiracAudioPlayerBase.mm */; };
+		F7D758211915EC75004CA402 /* DiracFxAudioPlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = F7D7580D1915EC75004CA402 /* DiracFxAudioPlayer.h */; };
+		F7D758221915EC75004CA402 /* DiracFxAudioPlayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = F7D7580E1915EC75004CA402 /* DiracFxAudioPlayer.mm */; };
+		F7D758231915EC75004CA402 /* EAFRead.h in Headers */ = {isa = PBXBuildFile; fileRef = F7D758101915EC75004CA402 /* EAFRead.h */; };
+		F7D758241915EC75004CA402 /* EAFRead.mm in Sources */ = {isa = PBXBuildFile; fileRef = F7D758111915EC75004CA402 /* EAFRead.mm */; };
+		F7D758251915EC75004CA402 /* EAFWrite.h in Headers */ = {isa = PBXBuildFile; fileRef = F7D758121915EC75004CA402 /* EAFWrite.h */; };
+		F7D758261915EC75004CA402 /* EAFWrite.mm in Sources */ = {isa = PBXBuildFile; fileRef = F7D758131915EC75004CA402 /* EAFWrite.mm */; };
+		F7D758271915EC75004CA402 /* libDIRAC_iOS-fat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F7D758141915EC75004CA402 /* libDIRAC_iOS-fat.a */; };
+		F7D758281915EC75004CA402 /* Utilities.h in Headers */ = {isa = PBXBuildFile; fileRef = F7D7581C1915EC75004CA402 /* Utilities.h */; };
+		F7D758291915EC75004CA402 /* Utilities.mm in Sources */ = {isa = PBXBuildFile; fileRef = F7D7581D1915EC75004CA402 /* Utilities.mm */; };
+		F7D7583719172BB3004CA402 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7D7583619172BB3004CA402 /* Accounts.framework */; };
+		F7D7583919172BB6004CA402 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7D7583819172BB6004CA402 /* Accelerate.framework */; };
+		F7D7583B19172BBE004CA402 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7D7583A19172BBE004CA402 /* MediaPlayer.framework */; };
+		F7D7583D19172BC8004CA402 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7D7583C19172BC8004CA402 /* CoreAudio.framework */; };
+		F7D7583F19172BD4004CA402 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7D7583E19172BD4004CA402 /* AudioToolbox.framework */; };
+		F7D7584119172CFC004CA402 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F7D7584019172CFC004CA402 /* libc++.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -712,9 +729,32 @@
 		D443237817C81C0C00204484 /* GPUImageMovieComposition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GPUImageMovieComposition.h; path = Source/GPUImageMovieComposition.h; sourceTree = SOURCE_ROOT; };
 		D443237917C81C0C00204484 /* GPUImageMovieComposition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GPUImageMovieComposition.m; path = Source/GPUImageMovieComposition.m; sourceTree = SOURCE_ROOT; };
 		F73D58DD19122D890030F3F3 /* GPUImageAudioPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GPUImageAudioPlayer.h; path = Source/GPUImageAudioPlayer.h; sourceTree = SOURCE_ROOT; };
-		F73D58DE19122D890030F3F3 /* GPUImageAudioPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GPUImageAudioPlayer.m; path = Source/GPUImageAudioPlayer.m; sourceTree = SOURCE_ROOT; };
 		F73D58E219122ED90030F3F3 /* TPCircularBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TPCircularBuffer.h; path = Source/TPCircularBuffer.h; sourceTree = "<group>"; };
 		F73D58E319122ED90030F3F3 /* TPCircularBuffer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TPCircularBuffer.m; path = Source/TPCircularBuffer.m; sourceTree = "<group>"; };
+		F7D758081915EC75004CA402 /* Dirac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dirac.h; sourceTree = "<group>"; };
+		F7D7580A1915EC75004CA402 /*  DiracAudioPlayer ReadMe.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = " DiracAudioPlayer ReadMe.rtf"; sourceTree = "<group>"; };
+		F7D7580B1915EC75004CA402 /* DiracAudioPlayerBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiracAudioPlayerBase.h; sourceTree = "<group>"; };
+		F7D7580C1915EC75004CA402 /* DiracAudioPlayerBase.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = DiracAudioPlayerBase.mm; sourceTree = "<group>"; };
+		F7D7580D1915EC75004CA402 /* DiracFxAudioPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiracFxAudioPlayer.h; sourceTree = "<group>"; };
+		F7D7580E1915EC75004CA402 /* DiracFxAudioPlayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = DiracFxAudioPlayer.mm; sourceTree = "<group>"; };
+		F7D758101915EC75004CA402 /* EAFRead.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EAFRead.h; sourceTree = "<group>"; };
+		F7D758111915EC75004CA402 /* EAFRead.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = EAFRead.mm; sourceTree = "<group>"; };
+		F7D758121915EC75004CA402 /* EAFWrite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EAFWrite.h; sourceTree = "<group>"; };
+		F7D758131915EC75004CA402 /* EAFWrite.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = EAFWrite.mm; sourceTree = "<group>"; };
+		F7D758141915EC75004CA402 /* libDIRAC_iOS-fat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libDIRAC_iOS-fat.a"; sourceTree = "<group>"; };
+		F7D758161915EC75004CA402 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		F7D758171915EC75004CA402 /* song.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = song.aif; sourceTree = "<group>"; };
+		F7D758181915EC75004CA402 /* song2.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = song2.caf; sourceTree = "<group>"; };
+		F7D758191915EC75004CA402 /* test.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = test.aif; sourceTree = "<group>"; };
+		F7D7581A1915EC75004CA402 /* voice.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = voice.aif; sourceTree = "<group>"; };
+		F7D7581C1915EC75004CA402 /* Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utilities.h; sourceTree = "<group>"; };
+		F7D7581D1915EC75004CA402 /* Utilities.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Utilities.mm; sourceTree = "<group>"; };
+		F7D7583619172BB3004CA402 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		F7D7583819172BB6004CA402 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		F7D7583A19172BBE004CA402 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		F7D7583C19172BC8004CA402 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		F7D7583E19172BD4004CA402 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		F7D7584019172CFC004CA402 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -722,11 +762,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7D7584119172CFC004CA402 /* libc++.dylib in Frameworks */,
+				F7D7583F19172BD4004CA402 /* AudioToolbox.framework in Frameworks */,
+				F7D7583D19172BC8004CA402 /* CoreAudio.framework in Frameworks */,
+				F7D7583B19172BBE004CA402 /* MediaPlayer.framework in Frameworks */,
+				F7D7583919172BB6004CA402 /* Accelerate.framework in Frameworks */,
+				F7D7583719172BB3004CA402 /* Accounts.framework in Frameworks */,
 				BCB5E77914E20BAF00701302 /* CoreMedia.framework in Frameworks */,
 				BCB5E77714E20BA800701302 /* CoreVideo.framework in Frameworks */,
 				BCB5E77514E20B9700701302 /* OpenGLES.framework in Frameworks */,
 				BCB5E77314E20B9100701302 /* QuartzCore.framework in Frameworks */,
 				BCB5E77114E20B8A00701302 /* AVFoundation.framework in Frameworks */,
+				F7D758271915EC75004CA402 /* libDIRAC_iOS-fat.a in Frameworks */,
 				BCB5E76F14E20B8000701302 /* UIKit.framework in Frameworks */,
 				BCF1A33814DDB1EC00852800 /* Foundation.framework in Frameworks */,
 			);
@@ -980,7 +1027,6 @@
 			isa = PBXGroup;
 			children = (
 				F73D58DD19122D890030F3F3 /* GPUImageAudioPlayer.h */,
-				F73D58DE19122D890030F3F3 /* GPUImageAudioPlayer.m */,
 				BC982C6A14F33C290001FF6F /* GPUImageMovie.h */,
 				BC982C6B14F33C2A0001FF6F /* GPUImageMovie.m */,
 				D443237817C81C0C00204484 /* GPUImageMovieComposition.h */,
@@ -1124,11 +1170,12 @@
 		BCF1A32914DDB1EC00852800 = {
 			isa = PBXGroup;
 			children = (
-				F73D58E119122EBC0030F3F3 /* TPCircularBuffer */,
+				F7D758071915EC75004CA402 /* Dirac */,
+				BCF1A33614DDB1EC00852800 /* Frameworks */,
 				BCF1A33914DDB1EC00852800 /* GPUImage */,
 				BCF1A34D14DDB1EC00852800 /* GPUImageTests */,
-				BCF1A33614DDB1EC00852800 /* Frameworks */,
 				BCF1A33514DDB1EC00852800 /* Products */,
+				F73D58E119122EBC0030F3F3 /* TPCircularBuffer */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1144,6 +1191,12 @@
 		BCF1A33614DDB1EC00852800 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F7D7584019172CFC004CA402 /* libc++.dylib */,
+				F7D7583E19172BD4004CA402 /* AudioToolbox.framework */,
+				F7D7583C19172BC8004CA402 /* CoreAudio.framework */,
+				F7D7583A19172BBE004CA402 /* MediaPlayer.framework */,
+				F7D7583819172BB6004CA402 /* Accelerate.framework */,
+				F7D7583619172BB3004CA402 /* Accounts.framework */,
 				BCB5E77814E20BAF00701302 /* CoreMedia.framework */,
 				BCB5E77614E20BA800701302 /* CoreVideo.framework */,
 				BCB5E77414E20B9700701302 /* OpenGLES.framework */,
@@ -1213,6 +1266,64 @@
 			name = TPCircularBuffer;
 			sourceTree = "<group>";
 		};
+		F7D758071915EC75004CA402 /* Dirac */ = {
+			isa = PBXGroup;
+			children = (
+				F7D758081915EC75004CA402 /* Dirac.h */,
+				F7D758091915EC75004CA402 /* DiracAudioPlayer */,
+				F7D7580F1915EC75004CA402 /* ExtAudioFile */,
+				F7D758141915EC75004CA402 /* libDIRAC_iOS-fat.a */,
+				F7D758151915EC75004CA402 /* res */,
+				F7D7581B1915EC75004CA402 /* util */,
+			);
+			name = Dirac;
+			path = ../Dirac;
+			sourceTree = "<group>";
+		};
+		F7D758091915EC75004CA402 /* DiracAudioPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				F7D7580A1915EC75004CA402 /*  DiracAudioPlayer ReadMe.rtf */,
+				F7D7580B1915EC75004CA402 /* DiracAudioPlayerBase.h */,
+				F7D7580C1915EC75004CA402 /* DiracAudioPlayerBase.mm */,
+				F7D7580D1915EC75004CA402 /* DiracFxAudioPlayer.h */,
+				F7D7580E1915EC75004CA402 /* DiracFxAudioPlayer.mm */,
+			);
+			path = DiracAudioPlayer;
+			sourceTree = "<group>";
+		};
+		F7D7580F1915EC75004CA402 /* ExtAudioFile */ = {
+			isa = PBXGroup;
+			children = (
+				F7D758101915EC75004CA402 /* EAFRead.h */,
+				F7D758111915EC75004CA402 /* EAFRead.mm */,
+				F7D758121915EC75004CA402 /* EAFWrite.h */,
+				F7D758131915EC75004CA402 /* EAFWrite.mm */,
+			);
+			path = ExtAudioFile;
+			sourceTree = "<group>";
+		};
+		F7D758151915EC75004CA402 /* res */ = {
+			isa = PBXGroup;
+			children = (
+				F7D758161915EC75004CA402 /* MainWindow.xib */,
+				F7D758171915EC75004CA402 /* song.aif */,
+				F7D758181915EC75004CA402 /* song2.caf */,
+				F7D758191915EC75004CA402 /* test.aif */,
+				F7D7581A1915EC75004CA402 /* voice.aif */,
+			);
+			path = res;
+			sourceTree = "<group>";
+		};
+		F7D7581B1915EC75004CA402 /* util */ = {
+			isa = PBXGroup;
+			children = (
+				F7D7581C1915EC75004CA402 /* Utilities.h */,
+				F7D7581D1915EC75004CA402 /* Utilities.mm */,
+			);
+			path = util;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -1251,6 +1362,7 @@
 				BC1B718E14F56C1D00ACA2AB /* GPUImageSwirlFilter.h in Headers */,
 				0DF3FA2B14FA00C9006AF7D9 /* GPUImageVignetteFilter.h in Headers */,
 				BC1A483E14FD1EF900D552E8 /* GPUImageGaussianBlurFilter.h in Headers */,
+				F7D758231915EC75004CA402 /* EAFRead.h in Headers */,
 				BC1B728114FB16AF00ACA2AB /* GPUImageMovieWriter.h in Headers */,
 				BCC93A1E1501E42F00958B26 /* GPUImageTwoPassFilter.h in Headers */,
 				BCC93A321502A92100958B26 /* GPUImageGaussianSelectiveBlurFilter.h in Headers */,
@@ -1259,6 +1371,7 @@
 				BCB6B837150400030041703B /* GPUImageExposureFilter.h in Headers */,
 				BCB6B839150400030041703B /* GPUImageSharpenFilter.h in Headers */,
 				BCB6B85615041A920041703B /* GPUImageColorBurnBlendFilter.h in Headers */,
+				F7D7581F1915EC75004CA402 /* DiracAudioPlayerBase.h in Headers */,
 				BCB6B85815041A920041703B /* GPUImageColorDodgeBlendFilter.h in Headers */,
 				BCB6B85A15041A920041703B /* GPUImageScreenBlendFilter.h in Headers */,
 				BCB6B8701504234A0041703B /* GPUImageDifferenceBlendFilter.h in Headers */,
@@ -1272,6 +1385,7 @@
 				BCC94CFA15101EB3002F9BC5 /* GPUImageTransformFilter.h in Headers */,
 				BC54D563151904FF003F4A41 /* GPUImageChromaKeyBlendFilter.h in Headers */,
 				F73D58E419122ED90030F3F3 /* TPCircularBuffer.h in Headers */,
+				F7D758251915EC75004CA402 /* EAFWrite.h in Headers */,
 				6D13DBE6151AA804000B23BA /* GPUImageHazeFilter.h in Headers */,
 				F73D58DF19122D890030F3F3 /* GPUImageAudioPlayer.h in Headers */,
 				BCC94ABB151E4FD6008554B4 /* GPUImageLuminanceThresholdFilter.h in Headers */,
@@ -1293,6 +1407,7 @@
 				BCF3D70A153DCC9A009A1FE5 /* GPUImage3x3ConvolutionFilter.h in Headers */,
 				BCF3D70F153DF9E7009A1FE5 /* GPUImageEmbossFilter.h in Headers */,
 				BCF3D71D153E06C3009A1FE5 /* GPUImageCannyEdgeDetectionFilter.h in Headers */,
+				F7D758211915EC75004CA402 /* DiracFxAudioPlayer.h in Headers */,
 				BCBF617D16E4F69B00E2784A /* GPUImagePoissonBlendFilter.h in Headers */,
 				BCF3D722153E0E0C009A1FE5 /* GPUImageThresholdEdgeDetectionFilter.h in Headers */,
 				BCF3D730153F0D6F009A1FE5 /* GPUImageSmoothToonFilter.h in Headers */,
@@ -1305,6 +1420,7 @@
 				BCAD0985154F931C00278521 /* GPUImageAlphaBlendFilter.h in Headers */,
 				BCAD099F15506F6F00278521 /* GPUImageNonMaximumSuppressionFilter.h in Headers */,
 				4686952F155AACAC0060BA43 /* GPUImageSourceOverBlendFilter.h in Headers */,
+				F7D758281915EC75004CA402 /* Utilities.h in Headers */,
 				BC114898155AF65400F107AF /* GPUImageTwoInputFilter.h in Headers */,
 				BEBE83B5155C092A00EEF8C3 /* GPUImageRGBFilter.h in Headers */,
 				BC01E82D155CA3F1004C75C3 /* GPUImageMedianFilter.h in Headers */,
@@ -1346,6 +1462,7 @@
 				96781B2F15C38DCF005FA0D7 /* GPUImageAmatorkaFilter.h in Headers */,
 				96781B3415C39E80005FA0D7 /* GPUImageMissEtikateFilter.h in Headers */,
 				96781B4615C3A6F1005FA0D7 /* GPUImageSoftEleganceFilter.h in Headers */,
+				F7D7581E1915EC75004CA402 /* Dirac.h in Headers */,
 				BCD907CE15CDEE720019C556 /* GPUImageDivideBlendFilter.h in Headers */,
 				BCD907D315CDEE930019C556 /* GPUImageAddBlendFilter.h in Headers */,
 				BCF851BA15CF29B3000EBC8B /* GPUImagePolkaDotFilter.h in Headers */,
@@ -1528,6 +1645,7 @@
 				BC1B717D14F566E200ACA2AB /* GPUImageSketchFilter.m in Sources */,
 				BC1B718F14F56C1D00ACA2AB /* GPUImageSwirlFilter.m in Sources */,
 				0DF3FA2C14FA00C9006AF7D9 /* GPUImageVignetteFilter.m in Sources */,
+				F7D758201915EC75004CA402 /* DiracAudioPlayerBase.mm in Sources */,
 				BC1A47F514FC759D00D552E8 /* GPUImageGaussianBlurFilter.m in Sources */,
 				BC1B728214FB16AF00ACA2AB /* GPUImageMovieWriter.m in Sources */,
 				BCC93A1F1501E42F00958B26 /* GPUImageTwoPassFilter.m in Sources */,
@@ -1538,7 +1656,6 @@
 				BC8A584C18131E4B00E6B507 /* GPUImageLuminanceRangeFilter.m in Sources */,
 				BCB6B85715041A920041703B /* GPUImageColorBurnBlendFilter.m in Sources */,
 				BCB6B85915041A920041703B /* GPUImageColorDodgeBlendFilter.m in Sources */,
-				F73D58E019122D890030F3F3 /* GPUImageAudioPlayer.m in Sources */,
 				BCB6B85B15041A920041703B /* GPUImageScreenBlendFilter.m in Sources */,
 				BCB6B8711504234A0041703B /* GPUImageDifferenceBlendFilter.m in Sources */,
 				BCB6B8731504234A0041703B /* GPUImageExclusionBlendFilter.m in Sources */,
@@ -1577,7 +1694,9 @@
 				BCAD0979154F39CA00278521 /* GPUImagePrewittEdgeDetectionFilter.m in Sources */,
 				BCAD097E154F3CB000278521 /* GPUImageXYDerivativeFilter.m in Sources */,
 				BCAD0982154F7B2800278521 /* GPUImageHarrisCornerDetectionFilter.m in Sources */,
+				F7D758221915EC75004CA402 /* DiracFxAudioPlayer.mm in Sources */,
 				BCAD0986154F931C00278521 /* GPUImageAlphaBlendFilter.m in Sources */,
+				F7D758291915EC75004CA402 /* Utilities.mm in Sources */,
 				BCAD09A015506F6F00278521 /* GPUImageNonMaximumSuppressionFilter.m in Sources */,
 				46869530155AACAC0060BA43 /* GPUImageSourceOverBlendFilter.m in Sources */,
 				BC114899155AF65400F107AF /* GPUImageTwoInputFilter.m in Sources */,
@@ -1585,6 +1704,7 @@
 				BC01E82E155CA3F1004C75C3 /* GPUImageMedianFilter.m in Sources */,
 				BC01E833155CA5E2004C75C3 /* GPUImage3x3TextureSamplingFilter.m in Sources */,
 				BC7CC63615605A3500468085 /* GPUImageBilateralFilter.m in Sources */,
+				F7D758261915EC75004CA402 /* EAFWrite.mm in Sources */,
 				BC7CC69D1562C4BB00468085 /* GPUImageCrosshairGenerator.m in Sources */,
 				BC27A3CC15654F5A004F2D45 /* GPUImagePerlinNoiseFilter.m in Sources */,
 				BCF1E54115669907006B155F /* GPUImageJFAVoronoiFilter.m in Sources */,
@@ -1654,6 +1774,7 @@
 				BC185E8316B866F000EA01AD /* GPUImagePixellatePositionFilter.m in Sources */,
 				46A8097916B8A48E000C29ED /* GPUImageTwoInputCrossTextureSamplingFilter.m in Sources */,
 				BC61F4B116B9CAEB009F6234 /* GPUImagePoissonBlendFilter.m in Sources */,
+				F7D758241915EC75004CA402 /* EAFRead.mm in Sources */,
 				BCBC604E16C58B0900B11741 /* GPUImageMotionBlurFilter.m in Sources */,
 				BCBC605816C8527C00B11741 /* GPUImageZoomBlurFilter.m in Sources */,
 				BCBF617B16E4F44700E2784A /* GPUImageKuwaharaRadius3Filter.m in Sources */,
@@ -1724,7 +1845,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -1741,11 +1862,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
-				ONLY_ACTIVE_ARCH = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = NO;
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = iphoneos;
 				SYMROOT = "$(PROJECT_DIR)/../build";
+				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Debug;
 		};
@@ -1761,7 +1883,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -1771,11 +1893,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = iphoneos;
 				SYMROOT = "$(PROJECT_DIR)/../build";
 				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Release;
 		};
@@ -1787,6 +1910,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Source/iOS/GPUImage-Prefix.pch";
 				HEADER_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/odyth/Projects/Odyth/GPUImage/Dirac,
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1801,6 +1928,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Source/iOS/GPUImage-Prefix.pch";
 				HEADER_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/odyth/Projects/Odyth/GPUImage/Dirac,
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
