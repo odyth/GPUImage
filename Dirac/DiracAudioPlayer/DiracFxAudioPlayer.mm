@@ -109,8 +109,8 @@
 			long numFrames = 512;
 			
 			// Allocate buffer for Dirac output
-			short **audioIn = AllocateAudioBufferSInt16(mNumChannels, (UInt32)numFrames);
-			short **audioOut = AllocateAudioBufferSInt16(mNumChannels, (UInt32DiracFxMaxOutputBufferFramesRequired(2.0, 1.0, (int)numFrames));
+			short **audioIn = AllocateAudioBufferSInt16(mNumChannels, numFrames);
+			short **audioOut = AllocateAudioBufferSInt16(mNumChannels, DiracFxMaxOutputBufferFramesRequired(2.0, 1.0, numFrames));
 			
 			long ret = 0;
 			long framesOut = 0;

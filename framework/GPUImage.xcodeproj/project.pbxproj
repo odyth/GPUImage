@@ -377,6 +377,7 @@
 		F7D7583D19172BC8004CA402 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7D7583C19172BC8004CA402 /* CoreAudio.framework */; };
 		F7D7583F19172BD4004CA402 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7D7583E19172BD4004CA402 /* AudioToolbox.framework */; };
 		F7D7584119172CFC004CA402 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F7D7584019172CFC004CA402 /* libc++.dylib */; };
+		F7D7584519173993004CA402 /* GPUImageAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = F7D7584419173993004CA402 /* GPUImageAudioPlayer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -755,6 +756,7 @@
 		F7D7583C19172BC8004CA402 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		F7D7583E19172BD4004CA402 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		F7D7584019172CFC004CA402 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		F7D7584419173993004CA402 /* GPUImageAudioPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GPUImageAudioPlayer.m; path = Source/GPUImageAudioPlayer.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1026,6 +1028,7 @@
 		BCB5E78114E232BC00701302 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				F7D7584419173993004CA402 /* GPUImageAudioPlayer.m */,
 				F73D58DD19122D890030F3F3 /* GPUImageAudioPlayer.h */,
 				BC982C6A14F33C290001FF6F /* GPUImageMovie.h */,
 				BC982C6B14F33C2A0001FF6F /* GPUImageMovie.m */,
@@ -1679,6 +1682,7 @@
 				BCC1E66E152368130006EFA5 /* GPUImageCrosshatchFilter.m in Sources */,
 				BCC1E67C152368840006EFA5 /* GPUImageCGAColorspaceFilter.m in Sources */,
 				BC7D95D61523EE67000DF037 /* GPUImageStillCamera.m in Sources */,
+				F7D7584519173993004CA402 /* GPUImageAudioPlayer.m in Sources */,
 				BCABED8F15263CF20098A93E /* GPUImagePolarPixellateFilter.m in Sources */,
 				BCABED9115263CF20098A93E /* GPUImageStretchDistortionFilter.m in Sources */,
 				BCF3D68C153CC124009A1FE5 /* GPUImageTextureInput.m in Sources */,

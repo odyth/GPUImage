@@ -66,7 +66,7 @@ void DeallocateAudioBuffer(SInt16 **audio, int numChannels)
 }
 // ---------------------------------------------------------------------------------------------------------------------------
 
-static void DeallocateAudioBuffer(float **audio, int numChannels)
+void DeallocateAudioBuffer(float **audio, int numChannels)
 {
 	if (!audio) return;
 	for (long v = 0; v < numChannels; v++) {
@@ -116,12 +116,12 @@ SInt16 **AllocateAudioBufferSInt16(int numChannels, int numFrames)
 }	
 // ---------------------------------------------------------------------------------------------------------------------------
 
-//static void ClearAudioBuffer(float **audio, long numChannels, long numFrames)
-//{
-//	for (long v = 0; v < numChannels; v++) {
-//		memset(audio[v], 0, numFrames*sizeof(float));
-//	}
-//}
+void ClearAudioBuffer(float **audio, long numChannels, long numFrames)
+{
+	for (long v = 0; v < numChannels; v++) {
+		memset(audio[v], 0, numFrames*sizeof(float));
+	}
+}
 // ---------------------------------------------------------------------------------------------------------------------------
 
 void ClearAudioBuffer(SInt16 **audio, long numChannels, long numFrames)
