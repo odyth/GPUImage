@@ -20,6 +20,7 @@
 @interface GPUImageAudioPlayer(){
     AUGraph processingGraph;
     AudioUnit mixerUnit;
+    AudioUnit pitchUnit;
     
     TPCircularBuffer circularBuffer;
     BOOL firstBufferReached;
@@ -113,6 +114,7 @@ static OSStatus playbackCallback(void *inRefCon,
 	// easy means for connecting audioUnits together.
     AUNode outputNode;
 	AUNode mixerNode;
+    AUNode pitchNode;
     
     // Create AudioComponentDescriptions for the AUs we want in the graph
     // mixer component
@@ -122,6 +124,13 @@ static OSStatus playbackCallback(void *inRefCon,
 	mixer_desc.componentFlags = 0;
 	mixer_desc.componentFlagsMask = 0;
 	mixer_desc.componentManufacturer = kAudioUnitManufacturer_Apple;
+    
+    AudioComponentDescription pitch_desc;
+	pitch_desc.componentType = kAudioUnitType_FormatConverter;
+	pitch_desc.componentSubType = kAudioUnitSubType_NewTimePitch;
+	pitch_desc.componentFlags = 0;
+	pitch_desc.componentFlagsMask = 0;
+	pitch_desc.componentManufacturer = kAudioUnitManufacturer_Apple;
     
 	//  output component
 	AudioComponentDescription output_desc;
@@ -135,19 +144,29 @@ static OSStatus playbackCallback(void *inRefCon,
 	// You pass in a reference to the  AudioComponentDescription
 	// and get back an  AudioUnit
 	AUGraphAddNode(processingGraph, &output_desc, &outputNode);
-	AUGraphAddNode(processingGraph, &mixer_desc, &mixerNode );
+	AUGraphAddNode(processingGraph, &mixer_desc, &mixerNode);
+    AUGraphAddNode(processingGraph, &pitch_desc, &pitchNode);
+    
+    
     
 	// Now we can manage connections using nodes in the graph.
     // Connect the mixer node's output to the output node's input
-	AUGraphConnectNodeInput(processingGraph, mixerNode, 0, outputNode, 0);
+	AUGraphConnectNodeInput(processingGraph, mixerNode, 0, pitchNode, 0);
+    AUGraphConnectNodeInput(processingGraph, pitchNode, 0, outputNode, 0);
+
+    //AUGraphConnectNodeInput(processingGraph, mixerNode, 0, outputNode, 0);
     
     // open the graph AudioUnits are open but not initialized (no resource allocation occurs here)
 	AUGraphOpen(processingGraph);
     
 	// Get a link to the mixer AU so we can talk to it later
 	AUGraphNodeInfo(processingGraph, mixerNode, NULL, &mixerUnit);
+    AUGraphNodeInfo(processingGraph, pitchNode, NULL, &pitchUnit);
     
-	UInt32 elementCount = 1;
+    
+    AudioUnitSetParameter(pitchUnit, kNewTimePitchParam_Pitch, kAudioUnitScope_Global, 0, -500, 0);
+    
+    UInt32 elementCount = 1;
     AudioUnitSetProperty(mixerUnit, kAudioUnitProperty_ElementCount, kAudioUnitScope_Input, 0, &elementCount, sizeof(elementCount));
     
     // Set output callback
@@ -172,6 +191,16 @@ static OSStatus playbackCallback(void *inRefCon,
     
     // Apply format
     AudioUnitSetProperty(mixerUnit, kAudioUnitProperty_StreamFormat, kAudioUnitScope_Input, kOutputBus, &audioFormat, sizeof(audioFormat));
+    AudioStreamBasicDescription streamFormat;
+    UInt32 propertySize = sizeof (streamFormat);
+    AudioUnitGetProperty(pitchUnit,
+                         kAudioUnitProperty_StreamFormat,
+                         kAudioUnitScope_Input,
+                         0,
+                         &streamFormat,
+                         &propertySize);
+    
+    AudioUnitSetProperty(mixerUnit, kAudioUnitProperty_StreamFormat, kAudioUnitScope_Output, kOutputBus, &streamFormat, sizeof(streamFormat));
     
     //init the processing graph
     AUGraphInitialize(processingGraph);
