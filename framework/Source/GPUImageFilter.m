@@ -189,11 +189,13 @@ NSString *const kGPUImagePassthroughFragmentShaderString = SHADER_STRING
         return NULL;
     }
 
+    GPUImageFramebuffer* framebuffer = [self framebufferForOutput];
+    
     usingNextFrameForImageCapture = NO;
     dispatch_semaphore_signal(imageCaptureSemaphore);
     
-    // All image output is now managed by the framebuffer itself
-    return [[self framebufferForOutput] newCGImageFromFramebufferContents];
+    CGImageRef image = [framebuffer newCGImageFromFramebufferContents];
+    return image;
 }
 
 #pragma mark -
@@ -512,11 +514,14 @@ NSString *const kGPUImagePassthroughFragmentShaderString = SHADER_STRING
 
 - (void)setFloatArray:(GLfloat *)arrayValue length:(GLsizei)arrayLength forUniform:(GLint)uniform program:(GLProgram *)shaderProgram;
 {
+    // Make a copy of the data, so it doesn't get overwritten before async call executes
+    NSData* arrayData = [NSData dataWithBytes:arrayValue length:arrayLength * sizeof(arrayValue[0])];
+
     runAsynchronouslyOnVideoProcessingQueue(^{
         [GPUImageContext setActiveShaderProgram:shaderProgram];
         
         [self setAndExecuteUniformStateCallbackAtIndex:uniform forProgram:shaderProgram toBlock:^{
-            glUniform1fv(uniform, arrayLength, arrayValue);
+            glUniform1fv(uniform, arrayLength, [arrayData bytes]);
         }];
     });
 }
