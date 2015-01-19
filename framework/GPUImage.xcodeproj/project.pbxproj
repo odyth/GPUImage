@@ -1333,14 +1333,6 @@
 			children = (
 				F7D7584419173993004CA402 /* GPUImageAudioPlayer.m */,
 				F73D58DD19122D890030F3F3 /* GPUImageAudioPlayer.h */,
-				BCB5E77D14E22E4200701302 /* GPUImageOutput.h */,
-				BCB5E77E14E22E4200701302 /* GPUImageOutput.m */,
-				BCB5E76314E208D600701302 /* GPUImageVideoCamera.h */,
-				BCB5E76414E208D600701302 /* GPUImageVideoCamera.m */,
-				BC7D95D31523EE67000DF037 /* GPUImageStillCamera.h */,
-				BC7D95D41523EE67000DF037 /* GPUImageStillCamera.m */,
-				BCB5E7D814E6003400701302 /* GPUImagePicture.h */,
-				BCB5E7D914E6003400701302 /* GPUImagePicture.m */,
 				84FFC8091936408F00994258 /* GPUImagePicture+TextureSubimage.h */,
 				84FFC80A1936408F00994258 /* GPUImagePicture+TextureSubimage.m */,
 				BC982C6A14F33C290001FF6F /* GPUImageMovie.h */,
@@ -1488,7 +1480,6 @@
 		BCF1A32914DDB1EC00852800 = {
 			isa = PBXGroup;
 			children = (
-				BCF1A33614DDB1EC00852800 /* Frameworks */,
 				BCF1A33914DDB1EC00852800 /* GPUImage */,
 				BCF1A33614DDB1EC00852800 /* Frameworks */,
 				BCF1A33514DDB1EC00852800 /* Products */,
@@ -2476,7 +2467,6 @@
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = iphoneos;
 				SYMROOT = "$(PROJECT_DIR)/../build";
-				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Debug;
 		};
@@ -2510,7 +2500,6 @@
 				SDKROOT = iphoneos;
 				SYMROOT = "$(PROJECT_DIR)/../build";
 				VALIDATE_PRODUCT = YES;
-				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Release;
 		};
