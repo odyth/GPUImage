@@ -12,7 +12,7 @@
 #define SAMPLE_RATE 44100.0
 
 
-#define kUnitSize sizeof(SInt32)
+#define kUnitSize sizeof(SInt16)
 #define kBufferUnit 655360
 #define kTotalBufferSize kBufferUnit * kUnitSize
 #define kRescueBufferSize kBufferUnit / 2
@@ -41,7 +41,7 @@ static OSStatus playbackCallback(void *inRefCon,
     
     
     int numberOfChannels = ioData->mBuffers[0].mNumberChannels;
-    SInt32 *outSample = (SInt32 *)ioData->mBuffers[0].mData;
+    SInt16 *outSample = (SInt16 *)ioData->mBuffers[0].mData;
     
     // Zero-out all the output samples first
     memset(outSample, 0, ioData->mBuffers[0].mDataByteSize);
@@ -50,7 +50,7 @@ static OSStatus playbackCallback(void *inRefCon,
     
     if (p.hasBuffer){
         int32_t availableBytes;
-        SInt32 *bufferTail = TPCircularBufferTail([p getBuffer], &availableBytes);
+        SInt16 *bufferTail = TPCircularBufferTail([p getBuffer], &availableBytes);
         
         int32_t requestedBytesSize = inNumberFrames * kUnitSize * numberOfChannels;
         
@@ -179,7 +179,7 @@ static OSStatus playbackCallback(void *inRefCon,
     // Describe format
     AudioStreamBasicDescription audioFormat;
     audioFormat.mFormatID	= kAudioFormatLinearPCM;
-    audioFormat.mFormatFlags = kAudioFormatFlagsNativeFloatPacked;
+    audioFormat.mFormatFlags = kAudioFormatFlagIsSignedInteger | kAudioFormatFlagsNativeEndian | kAudioFormatFlagIsPacked | kAudioFormatFlagIsNonInterleaved | (kAudioUnitSampleFractionBits << kLinearPCMFormatFlagsSampleFractionShift);
     audioFormat.mSampleRate = SAMPLE_RATE;
     audioFormat.mReserved = 0;
     
