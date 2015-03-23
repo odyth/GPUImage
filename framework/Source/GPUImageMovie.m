@@ -29,7 +29,6 @@
     
 }
 
-@property (nonatomic, strong) GPUImageAudioPlayer *audioPlayer;
 @property (nonatomic) dispatch_queue_t audio_queue;
 
 - (void)processAsset;

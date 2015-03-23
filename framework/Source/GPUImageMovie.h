@@ -12,8 +12,10 @@
 
 /** Source object for filtering movies
  */
+@class GPUImageAudioPlayer;
 @interface GPUImageMovie : GPUImageOutput
 
+@property (nonatomic, strong) GPUImageAudioPlayer *audioPlayer;
 @property (readwrite, retain) AVAsset *asset;
 @property (readwrite, retain) AVPlayerItem *playerItem;
 @property(readwrite, retain) NSURL *url;

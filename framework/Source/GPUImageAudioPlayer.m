@@ -163,8 +163,7 @@ static OSStatus playbackCallback(void *inRefCon,
 	AUGraphNodeInfo(processingGraph, mixerNode, NULL, &mixerUnit);
     AUGraphNodeInfo(processingGraph, pitchNode, NULL, &pitchUnit);
     
-    
-    AudioUnitSetParameter(pitchUnit, kNewTimePitchParam_Pitch, kAudioUnitScope_Global, 0, -500, 0);
+    self.pitch = -500;
     
     UInt32 elementCount = 1;
     AudioUnitSetProperty(mixerUnit, kAudioUnitProperty_ElementCount, kAudioUnitScope_Input, 0, &elementCount, sizeof(elementCount));
@@ -207,6 +206,15 @@ static OSStatus playbackCallback(void *inRefCon,
     
     TPCircularBufferInit(&circularBuffer, kTotalBufferSize);
     self.hasBuffer = NO;
+}
+
+-(void)setPitch:(NSInteger)pitch
+{
+    if(_pitch != pitch)
+    {
+        _pitch = pitch;
+        AudioUnitSetParameter(pitchUnit, kNewTimePitchParam_Pitch, kAudioUnitScope_Global, 0, _pitch, 0);
+    }
 }
 
 - (void)startPlaying {
