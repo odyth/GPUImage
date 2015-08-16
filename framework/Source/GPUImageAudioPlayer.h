@@ -10,21 +10,19 @@
 #include <AudioUnit/AudioUnit.h>
 #import <AudioToolbox/AudioToolbox.h>
 #import <AVFoundation/AVFoundation.h>
-#import "TPCircularBuffer.h"
-
 
 @interface GPUImageAudioPlayer : NSObject
 
-- (void)initAudio;
-- (void)startPlaying;
-- (void)stopPlaying;
-- (void)copyBuffer:(CMSampleBufferRef)buf;
-
-- (TPCircularBuffer *)getBuffer;
-
-@property(nonatomic, assign) BOOL hasBuffer;
-@property(nonatomic, assign) SInt32 bufferSize;
+@property(nonatomic, readonly) BOOL hasBuffer;
+@property(nonatomic, readonly) SInt32 bufferSize;
 @property(nonatomic, readonly) BOOL readyForMoreBytes;
 @property (nonatomic) NSInteger pitch;
+
+-(instancetype)initForOfflinePlayback:(BOOL)offline;
+- (void)initAudio:(CMSampleBufferRef)sampleAudio;
+- (void)start;
+- (void)stop;
+- (void)copyBuffer:(CMSampleBufferRef)buffer;
+-(CMSampleBufferRef)processOutput;
 
 @end

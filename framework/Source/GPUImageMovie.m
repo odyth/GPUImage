@@ -246,8 +246,8 @@
             
             if (self.audioPlayer == nil){
                 self.audioPlayer = [[GPUImageAudioPlayer alloc] init];
-                [self.audioPlayer initAudio];
-                [self.audioPlayer startPlaying];
+                [self.audioPlayer initAudio:nil];
+                [self.audioPlayer start];
             }
         }
     }
@@ -726,7 +726,7 @@
     
     if (self.audioPlayer != nil)
     {
-        [self.audioPlayer stopPlaying];
+        [self.audioPlayer stop];
     }
     
     if (self.playerItem && (displayLink != nil))
