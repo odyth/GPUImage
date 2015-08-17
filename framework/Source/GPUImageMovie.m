@@ -244,8 +244,9 @@
                 self.audio_queue = dispatch_queue_create("GPUAudioQueue", nil);
             }
             
-            if (self.audioPlayer == nil){
-                self.audioPlayer = [[GPUImageAudioPlayer alloc] init];
+            if (self.audioPlayer == nil)
+            {
+                self.audioPlayer = [[GPUImageAudioPlayer alloc] initForOfflinePlayback:NO];
                 [self.audioPlayer initAudio:nil];
                 [self.audioPlayer start];
             }
