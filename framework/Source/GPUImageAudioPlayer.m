@@ -54,7 +54,7 @@ static OSStatus playbackCallback(void *inRefCon, AudioUnitRenderActionFlags *ioA
     GPUImageAudioPlayer *audioPlayer = (__bridge GPUImageAudioPlayer *)inRefCon;
     if (audioPlayer.hasBuffer)
     {
-        SInt32 availableBytes;
+        int32_t availableBytes;
         SInt16 *bufferTail = TPCircularBufferTail([audioPlayer getBuffer], &availableBytes);
         
         SInt32 requestedBytesSize = inNumberFrames * kUnitSize * numberOfChannels;
