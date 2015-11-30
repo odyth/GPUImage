@@ -139,7 +139,7 @@ static OSStatus playbackCallback(void *inRefCon, AudioUnitRenderActionFlags *ioA
     // mixer component
     AudioComponentDescription mixer_desc;
     mixer_desc.componentType = kAudioUnitType_Mixer;
-    mixer_desc.componentSubType = kAudioUnitSubType_AU3DMixerEmbedded;
+    mixer_desc.componentSubType = kAudioUnitSubType_SpatialMixer;
     mixer_desc.componentFlags = 0;
     mixer_desc.componentFlagsMask = 0;
     mixer_desc.componentManufacturer = kAudioUnitManufacturer_Apple;
